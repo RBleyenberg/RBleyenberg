@@ -1,0 +1,22 @@
+<div id="menu" class="page-layout blank" fxLayout="column" fxLayoutAlign="start center" fxFlex darePerfectScrollbar>
+
+    <div class="header" fxLayout="row" fxLayoutAlign="center center" fxFlex="0 0 auto" [@slideInLeft]>
+        <h1>ITEMS</h1>
+    </div>
+
+    <!-- menu LIST -->
+    <div class="menu-list"  fxLayout="row wrap" fxLayoutAlign="center center" fxFlex="0 0 auto" [@fadeInOut]>
+
+        <!-- menu -->
+        <div class="menu-list-item" *ngFor="let m of menu" fxLayout="column" fxLayoutAlign="start center"
+            [@animate]="{value:'*',params:{y:'100%'}}">
+            <mat-icon class="s-56">{{m.icon}}</mat-icon>
+            <div class="menu-name">{{m.name}}</div>
+            <div class="menu-category">{{m.category}}</div>
+        </div>
+        <!-- / menu -->
+
+    </div>
+    <!-- / menu LIST -->
+</div>
+<!-- / menu -->

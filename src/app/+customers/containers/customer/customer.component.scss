@@ -1,0 +1,29 @@
+#customer {
+
+  .header {
+
+      .customer-image {
+          overflow: hidden;
+          width: 56px;
+          min-width: 56px;
+          max-width: 56px;
+          height: 56px;
+          min-height: 56px;
+          max-height: 56px;
+          border-radius: 4px;
+
+          img {
+              height: 100%;
+              width: auto;
+              max-width: none;
+          }
+      }
+
+      .subtitle {
+          margin: 6px 0 0 0;
+      }
+  }
+    .center .content-card {
+    max-height: calc(100vh - 205px);
+}
+}

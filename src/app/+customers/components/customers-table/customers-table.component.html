@@ -1,0 +1,47 @@
+   <div fxLayout="row" fxLayoutAlign="end center">
+      <button class="toggle-container-button" mat-icon-button [matMenuTriggerFor]="colums">
+        <mat-icon>list</mat-icon>
+      </button>
+      <mat-menu #colums="matMenu">
+        <div class="toggle-table" fxLayout="column" fxLayoutAlign="start start">
+        <span>Columns to display</span>
+        <mat-button-toggle-group  [multiple]="true" #group="matButtonToggleGroup">
+          <mat-button-toggle [checked]="true" value="name">
+            <span>name</span>
+          </mat-button-toggle>
+        </mat-button-toggle-group>
+      </div>
+      </mat-menu>
+    </div>
+
+<!-- / SEARCH -->
+  <div class="">
+    <mat-table 
+    *ngIf="group.value && group.value.length" 
+    #table class="customers-table" 
+    [dataSource]="dataSource" 
+    [@animateStagger]="{value:'50'}" 
+    matSort
+    darePerfectScrollbar>
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Name</mat-header-cell>
+        <mat-cell *matCellDef="let customer">
+          <p class="text-truncate" [routerLink]="[customer.id]">{{customer.name}}</p>
+        </mat-cell>
+      </ng-container>
+      <!-- <ng-container matColumnDef="actions">
+        <mat-header-cell *matHeaderCellDef>actions</mat-header-cell>
+        <mat-cell *matCellDef="let customer">
+          <button mat-icon-button [matMenuTriggerFor]="menu">
+            <mat-icon>more_vert</mat-icon>
+          </button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item (click)="edit.emit(customer)">Edit</button>
+            <button mat-menu-item (click)="delete.emit(customer)">Delete</button>
+          </mat-menu>
+        </mat-cell>
+      </ng-container> -->
+      <mat-header-row *matHeaderRowDef="columnsToDisplay; sticky:true"></mat-header-row>
+      <mat-row *matRowDef="let customer; columns: columnsToDisplay" class="customer" matRipple></mat-row>
+    </mat-table>
+  </div>

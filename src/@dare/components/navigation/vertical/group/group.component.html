@@ -1,0 +1,16 @@
+<ng-container *ngIf="!item.hidden">
+
+    <div class="group-title" [ngClass]="item.classes">
+        <span class="hint-text" [translate]="item.translate">{{ item.title }}</span>
+    </div>
+
+    <div class="group-items">
+        <ng-container *ngFor="let item of item.children">
+            <dare-nav-vertical-group *ngIf="item.type=='group'" [item]="item"></dare-nav-vertical-group>
+            <dare-nav-vertical-collapsable *ngIf="item.type=='collapsable'"
+                                           [item]="item"></dare-nav-vertical-collapsable>
+            <dare-nav-vertical-item *ngIf="item.type=='item'" [item]="item"></dare-nav-vertical-item>
+        </ng-container>
+    </div>
+
+</ng-container>

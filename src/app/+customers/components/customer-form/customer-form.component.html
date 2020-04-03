@@ -1,0 +1,30 @@
+
+
+
+ <!-- CONTENT -->
+ <div class="content">
+
+  <form name="productForm" [formGroup]="formGroup" class="product w-100-p" fxLayout="column" fxFlex>
+
+      <mat-tab-group>
+
+          <mat-tab label="Basic Info">
+
+              <div class="tab-content p-24" darePerfectScrollbar>
+
+                  <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
+                      <mat-label>Name</mat-label>
+                      <input matInput placeholder="Name" name="name" formControlName="name" required>
+                  </mat-form-field>
+
+              </div>
+
+          </mat-tab>
+
+      </mat-tab-group>
+
+  </form>
+
+</div>
+<!-- / CONTENT -->
+

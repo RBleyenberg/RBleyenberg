@@ -1,0 +1,18 @@
+<div class="navbar-header" [ngClass]="dareConfig.layout.navbar.secondaryBackground">
+
+    <div class="logo">
+        <img class="logo-icon" src="assets/images/logos/dare.svg">
+        <span class="logo-text">DARE</span>
+    </div>
+
+    <button mat-icon-button class="toggle-sidebar-opened"
+            (click)="toggleSidebarOpened()" fxHide.gt-md>
+        <mat-icon>arrow_back</mat-icon>
+    </button>
+
+</div>
+
+<div class="navbar-content" darePerfectScrollbar [darePerfectScrollbarOptions]="{suppressScrollX: true}"
+     [ngClass]="dareConfig.layout.navbar.primaryBackground">
+    <dare-navigation layout="vertical"></dare-navigation>
+</div>
